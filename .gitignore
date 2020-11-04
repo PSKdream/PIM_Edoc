@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+.vs
+/.vs
+/.vs/CodeDev/.vs
+/.vs/CodeDev/v15
+/.vs/PIMEdoc_CR/v15
+/PIMEdoc_CR/bin/Debug  
+/PIMEdoc_CR/obj/Release
+/PIMEdoc_CR/obj/Debug
+/PIMEdoc_CR/pkg
+/PIMEdoc_CR/pkgobj
+/PIMEdoc_CR/pkg/Release/PIMEdoc_CR
+/PIMEdoc_CR/pkgobj/Release
+/PIMEdoc_CR/bin/Release

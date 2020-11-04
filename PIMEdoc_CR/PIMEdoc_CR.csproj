@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{833D23D0-B32A-4FC2-B1A8-A048CD0B4B3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIMEdoc_CR</RootNamespace>
+    <AssemblyName>PIMEdoc_CR</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.8.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeTextBox, Version=3.3.1.12354, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.pdfa.5.5.10\lib\itextsharp.pdfa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xtra.5.5.10\lib\itextsharp.xtra.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.DocumentManagement">
+      <HintPath>Lib\Microsoft.Office.DocumentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Linq, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Security, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.Pdf, Version=17.3.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.Pdf.17.3.0\lib\net40\Select.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime">
+      <Private>True</Private>
+      <HintPath>Lib\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClearCacheData\ClearCacheData.cs" />
+    <Compile Include="ClearCacheData\ClearCacheDataUserControl.ascx.cs">
+      <DependentUpon>ClearCacheDataUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClearCacheData\ClearCacheDataUserControl.ascx.designer.cs">
+      <DependentUpon>ClearCacheDataUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClearCache\ClearCache.cs" />
+    <Compile Include="ClearCache\ClearCacheUserControl.ascx.cs">
+      <DependentUpon>ClearCacheUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClearCache\ClearCacheUserControl.ascx.designer.cs">
+      <DependentUpon>ClearCacheUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigNavigation\ConfigNavigation.cs" />
+    <Compile Include="ConfigNavigation\ConfigNavigationUserControl.ascx.cs">
+      <DependentUpon>ConfigNavigationUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigNavigation\ConfigNavigationUserControl.ascx.designer.cs">
+      <DependentUpon>ConfigNavigationUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\UpdateProgress.ascx.cs">
+      <DependentUpon>UpdateProgress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\PIMEdoc_CR\UpdateProgress.ascx.designer.cs">
+      <DependentUpon>UpdateProgress.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClassesDataAccess.cs">
+      <DependentUpon>DataClassesDataAccess.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClassesDataAccess.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassesDataAccess.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default\Default.cs" />
+    <Compile Include="Default\DefaultUserControl.ascx.cs">
+      <DependentUpon>DefaultUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default\DefaultUserControl.ascx.designer.cs">
+      <DependentUpon>DefaultUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DelegateList\DelegateList.cs" />
+    <Compile Include="DelegateList\DelegateListUserControl.ascx.cs">
+      <DependentUpon>DelegateListUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DelegateList\DelegateListUserControl.ascx.designer.cs">
+      <DependentUpon>DelegateListUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Delegate\Delegate.cs" />
+    <Compile Include="Delegate\DelegateUserControl.ascx.cs">
+      <DependentUpon>DelegateUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Delegate\DelegateUserControl.ascx.designer.cs">
+      <DependentUpon>DelegateUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentList\DepartmentList.cs" />
+    <Compile Include="DepartmentList\DepartmentListUserControl.ascx.cs">
+      <DependentUpon>DepartmentListUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentList\DepartmentListUserControl.ascx.designer.cs">
+      <DependentUpon>DepartmentListUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocLibPart\DocLibPart.cs" />
+    <Compile Include="DocLibPart\DocLibPartUserControl.ascx.cs">
+      <DependentUpon>DocLibPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocLibPart\DocLibPartUserControl.ascx.designer.cs">
+      <DependentUpon>DocLibPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="e-Document\e-Document.cs" />
+    <Compile Include="e-Document\e-DocumentUserControl.ascx.cs">
+      <DependentUpon>e-DocumentUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="e-Document\e-DocumentUserControl.ascx.designer.cs">
+      <DependentUpon>e-DocumentUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethod.cs" />
+    <Compile Include="Helper\JsHelper.cs" />
+    <Compile Include="Layouts\PIMEdoc_CR\PopUpNavigation.aspx.cs">
+      <DependentUpon>PopUpNavigation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\PIMEdoc_CR\PopUpNavigation.aspx.designer.cs">
+      <DependentUpon>PopUpNavigation.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MappingSecretary\MappingSecretary.cs" />
+    <Compile Include="MappingSecretary\MappingSecretaryUserControl.ascx.cs">
+      <DependentUpon>MappingSecretaryUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MappingSecretary\MappingSecretaryUserControl.ascx.designer.cs">
+      <DependentUpon>MappingSecretaryUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDocument\ReportDocument.cs" />
+    <Compile Include="ReportDocument\ReportDocumentUserControl.ascx.cs">
+      <DependentUpon>ReportDocumentUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportDocument\ReportDocumentUserControl.ascx.designer.cs">
+      <DependentUpon>ReportDocumentUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLogIn\ReportLogIn.cs" />
+    <Compile Include="ReportLogIn\ReportLogInUserControl.ascx.cs">
+      <DependentUpon>ReportLogInUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLogIn\ReportLogInUserControl.ascx.designer.cs">
+      <DependentUpon>ReportLogInUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTimeManagement\ReportTimeManagement.cs" />
+    <Compile Include="ReportTimeManagement\ReportTimeManagementUserControl.ascx.cs">
+      <DependentUpon>ReportTimeManagementUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportTimeManagement\ReportTimeManagementUserControl.ascx.designer.cs">
+      <DependentUpon>ReportTimeManagementUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rule\DocumentLibraryGV.cs" />
+    <Compile Include="Rule\EmployeeData.cs" />
+    <Compile Include="Rule\Extension.cs" />
+    <Compile Include="Rule\Impersonator.cs" />
+    <Compile Include="Rule\PDFHelper.cs" />
+    <Compile Include="Rule\SharedRules.cs" />
+    <Compile Include="Rule\SpecificEmployeeData.cs" />
+    <Compile Include="Rule\XMLFORWORD.cs" />
+    <Compile Include="UploadSignature\UploadSignature.cs" />
+    <Compile Include="UploadSignature\UploadSignatureUserControl.ascx.cs">
+      <DependentUpon>UploadSignatureUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadSignature\UploadSignatureUserControl.ascx.designer.cs">
+      <DependentUpon>UploadSignatureUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PIMWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WorklistPart\WorklistPart.cs" />
+    <Compile Include="WorklistPart\WorklistPartUserControl.ascx.cs">
+      <DependentUpon>WorklistPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorklistPart\WorklistPartUserControl.ascx.designer.cs">
+      <DependentUpon>WorklistPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worklist\Worklist.cs" />
+    <Compile Include="Worklist\WorklistUserControl.ascx.cs">
+      <DependentUpon>WorklistUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Worklist\WorklistUserControl.ascx.designer.cs">
+      <DependentUpon>WorklistUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClearCacheData\ClearCacheData.webpart" />
+    <None Include="ClearCacheData\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{66b27acf-03ed-4e32-9849-3dec0ab77af1}</SharePointProjectItemId>
+    </None>
+    <None Include="ClearCache\ClearCache.webpart" />
+    <None Include="ClearCache\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7bd88091-3dfd-4a60-b220-d358881980e2}</SharePointProjectItemId>
+    </None>
+    <None Include="ConfigNavigation\ConfigNavigation.webpart" />
+    <None Include="ConfigNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ddbcb29b-6abf-47ef-be89-77322eb7e3a9}</SharePointProjectItemId>
+    </None>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{641efbaf-2ec6-4e70-afb7-b182ca8e67bf}</SharePointProjectItemId>
+    </None>
+    <None Include="DataClassesDataAccess.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesDataAccess.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Default\Default.webpart" />
+    <None Include="Default\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f976c76d-c406-4459-b4f5-0655423957cf}</SharePointProjectItemId>
+    </None>
+    <None Include="DelegateList\DelegateList.webpart" />
+    <None Include="DelegateList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{93c6b3ba-cc95-4111-b1ee-aa46dbe8bcc4}</SharePointProjectItemId>
+    </None>
+    <None Include="Delegate\Delegate.webpart" />
+    <None Include="Delegate\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{699b5e99-8cca-420f-9b13-6e19661c6acd}</SharePointProjectItemId>
+    </None>
+    <None Include="DepartmentList\DepartmentList.webpart" />
+    <None Include="DepartmentList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fc231e35-8d8e-4b89-b295-5cfc65d825d9}</SharePointProjectItemId>
+    </None>
+    <None Include="DocLibPart\DocLibPart.webpart" />
+    <None Include="DocLibPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{df07a69c-46b0-400d-95dc-6f08e9b2a08b}</SharePointProjectItemId>
+    </None>
+    <None Include="e-Document\e-Document.webpart" />
+    <None Include="e-Document\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{51cd112b-8cd2-450b-ab57-58cbdea33e50}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{2fbeb8e7-8890-4907-aad6-5af983c23728}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b743413c-314a-4e39-a7ee-3eac390a5445}</SharePointProjectItemId>
+    </None>
+    <None Include="Lib\Select.Html.dep" />
+    <None Include="MappingSecretary\MappingSecretary.webpart" />
+    <None Include="MappingSecretary\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{440a0771-b586-4936-bedc-31a7261b11b3}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{f32f8887-d7cd-4816-a75b-2823eed2fd3f}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="ReportDocument\ReportDocument.webpart" />
+    <None Include="ReportDocument\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fc209b20-d984-46ba-b8a5-3b00814f7713}</SharePointProjectItemId>
+    </None>
+    <None Include="ReportLogIn\ReportLogIn.webpart" />
+    <None Include="ReportLogIn\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{298bfe50-3401-4048-beca-81daed08971f}</SharePointProjectItemId>
+    </None>
+    <None Include="ReportTimeManagement\ReportTimeManagement.webpart" />
+    <None Include="ReportTimeManagement\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{af0b60c0-3187-4f2c-8422-ba69132b7e0f}</SharePointProjectItemId>
+    </None>
+    <None Include="UploadSignature\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7c52de4a-99b6-403b-95f4-8d279df28451}</SharePointProjectItemId>
+    </None>
+    <None Include="UploadSignature\UploadSignature.webpart" />
+    <None Include="Web References\PIMWS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PIMWS\wscore_pim.wsdl" />
+    <None Include="WorklistPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0b90cd99-7423-4984-8a0c-03943e3fd568}</SharePointProjectItemId>
+    </None>
+    <None Include="WorklistPart\WorklistPart.webpart" />
+    <None Include="Worklist\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{466d8c49-cbef-46a8-9f2b-94b05546664f}</SharePointProjectItemId>
+    </None>
+    <None Include="Worklist\Worklist.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClearCacheData\ClearCacheDataUserControl.ascx" />
+    <Content Include="ClearCacheData\Elements.xml" />
+    <Content Include="ClearCache\ClearCacheUserControl.ascx" />
+    <Content Include="ClearCache\Elements.xml" />
+    <Content Include="ConfigNavigation\ConfigNavigationUserControl.ascx" />
+    <Content Include="ConfigNavigation\Elements.xml" />
+    <Content Include="CONTROLTEMPLATES\PIMEdoc_CR\Footer.ascx" />
+    <Content Include="CONTROLTEMPLATES\PIMEdoc_CR\Menu.ascx" />
+    <Content Include="CONTROLTEMPLATES\PIMEdoc_CR\UpdateProgress.ascx" />
+    <Content Include="Default\DefaultUserControl.ascx" />
+    <Content Include="Default\Elements.xml" />
+    <Content Include="DelegateList\DelegateListUserControl.ascx" />
+    <Content Include="DelegateList\Elements.xml" />
+    <Content Include="Delegate\DelegateUserControl.ascx" />
+    <Content Include="Delegate\Elements.xml" />
+    <Content Include="DepartmentList\DepartmentListUserControl.ascx" />
+    <Content Include="DepartmentList\Elements.xml" />
+    <Content Include="DocLibPart\DocLibPartUserControl.ascx" />
+    <Content Include="DocLibPart\Elements.xml" />
+    <Content Include="e-Document\e-DocumentUserControl.ascx" />
+    <Content Include="e-Document\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\PIMEdoc_CR\PopUpNavigation.aspx" />
+    <Content Include="Lib\FreeTextBox.dll" />
+    <Content Include="Lib\Select.HtmlToPdf.dll" />
+    <Content Include="Lib\Select.HtmlToPdf.xml" />
+    <Content Include="MappingSecretary\Elements.xml" />
+    <Content Include="MappingSecretary\MappingSecretaryUserControl.ascx" />
+    <Content Include="ReportDocument\Elements.xml" />
+    <Content Include="ReportDocument\ReportDocumentUserControl.ascx" />
+    <Content Include="ReportLogIn\Elements.xml" />
+    <Content Include="ReportLogIn\ReportLogInUserControl.ascx" />
+    <Content Include="ReportTimeManagement\Elements.xml" />
+    <Content Include="ReportTimeManagement\ReportTimeManagementUserControl.ascx" />
+    <Content Include="UploadSignature\Elements.xml" />
+    <Content Include="UploadSignature\UploadSignatureUserControl.ascx" />
+    <Content Include="WorklistPart\Elements.xml" />
+    <Content Include="WorklistPart\WorklistPartUserControl.ascx" />
+    <Content Include="Worklist\Elements.xml" />
+    <Content Include="Worklist\WorklistUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClassesDataAccess.dbml.layout">
+      <DependentUpon>DataClassesDataAccess.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\Drive E\Techconsbiz\PIM\Source New CR\PIMEdoc_CR\PIMEdoc_CR\Lib\wscore_pim.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PIMWS\</RelPath>
+      <UpdateFromURL>D:\Drive E\Techconsbiz\PIM\Source New CR\PIMEdoc_CR\PIMEdoc_CR\Lib\wscore_pim.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

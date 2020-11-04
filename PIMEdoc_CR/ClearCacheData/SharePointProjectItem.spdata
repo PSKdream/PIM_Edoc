@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="ClearCacheDataUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="ClearCacheData\" Type="ElementManifest" />
+    <ProjectItemFile Source="ClearCacheData.webpart" Target="ClearCacheData\" Type="ElementFile" />
+    <ProjectItemFile Source="ClearCacheDataUserControl.ascx" Target="CONTROLTEMPLATES\PIMEdoc_CR\ClearCacheData\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="PIMEdoc_CR.ClearCacheData" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

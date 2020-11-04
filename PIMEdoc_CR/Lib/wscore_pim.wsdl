@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://pimnet.pim.ac.th/soap/GetPosition" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://pimnet.pim.ac.th/soap/GetPosition" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://pimnet.pim.ac.th/soap/GetPosition">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenLDAPRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthenLDAPResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentProfileRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+    <wsdl:part name="strStudentcode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentProfileResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffProfileRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+    <wsdl:part name="strStaffcode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStaffProfileResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+    <wsdl:part name="strDepartmentID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffProfileRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+    <wsdl:part name="strPrimaryPosition" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffProfileResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionRequest">
+    <wsdl:part name="strName" type="xsd:string" />
+    <wsdl:part name="strPass" type="xsd:string" />
+    <wsdl:part name="strPositionID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="GetPositionPortType">
+    <wsdl:operation name="AuthenLDAP">
+      <wsdl:input message="tns:AuthenLDAPRequest" />
+      <wsdl:output message="tns:AuthenLDAPResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentProfile">
+      <wsdl:input message="tns:GetStudentProfileRequest" />
+      <wsdl:output message="tns:GetStudentProfileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffProfile">
+      <wsdl:input message="tns:GetStaffProfileRequest" />
+      <wsdl:output message="tns:GetStaffProfileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <wsdl:input message="tns:GetDepartmentRequest" />
+      <wsdl:output message="tns:GetDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaffProfile">
+      <wsdl:input message="tns:GetAllStaffProfileRequest" />
+      <wsdl:output message="tns:GetAllStaffProfileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <wsdl:input message="tns:GetPositionRequest" />
+      <wsdl:output message="tns:GetPositionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetPositionBinding" type="tns:GetPositionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="AuthenLDAP">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/AuthenLDAP" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentProfile">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/GetStudentProfile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStaffProfile">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/GetStaffProfile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/GetDepartment" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaffProfile">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/GetAllStaffProfile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <soap:operation soapAction="http://pimnet.pim.ac.th/wspim/wscore_pim.php/GetPosition" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetPosition">
+    <wsdl:port name="GetPositionPort" binding="tns:GetPositionBinding">
+      <soap:address location="http://pimnet.pim.ac.th/wspim/wscore_pim.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

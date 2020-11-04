@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PIMEdocument" Class="DataClassesDataAccessDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.ControlRunning" Member="ControlRunnings">
+    <Type Name="ControlRunning">
+      <Column Name="ControlRunningID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedYear" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="RunningNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Format" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Word" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Log]" Member="Logs">
+    <Type Name="Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StackTrace" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Page" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PostedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PostedBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNGroupMail" Member="TRNGroupMails">
+    <Type Name="TRNGroupMail">
+      <Column Name="GroupMailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DepartmentGroupMail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNEDocumentQueue" Member="TRNEDocumentQueues">
+    <Type Name="TRNEDocumentQueue">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserLoginName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNAssign" Member="TRNAssigns">
+    <Type Name="TRNAssign">
+      <Column Name="AssignID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActorID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ActorName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AssignToID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="AssignToName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AssignToDeptID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Acknowledge" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ActorDeptID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNReferenceDoc" Member="TRNReferenceDocs">
+    <Type Name="TRNReferenceDoc">
+      <Column Name="ReferenceDocID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RefDocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNEmployeeExtension" Member="TRNEmployeeExtensions">
+    <Type Name="TRNEmployeeExtension">
+      <Column Name="Sequence" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMPLOYEEID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PREFIX_TH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIRSTNAME_TH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LASTNAME_TH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PREFIX_EN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIRSTNAME_EN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LASTNAME_EN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BIRTHDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TELEPHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOBILE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MANAGERID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MANAGERUSERNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFIED_DATETIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_NAME_TH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_NAME_EN" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUBDEPARTMENT_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUBDEPARTMENT_NAME_TH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SUBDEPARTMENT_NAME_EN" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="POSITION_TD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="POSTION_NAME_TH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="POSTION_NAME_EN" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRIMARY_POSITION" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="EmployeeName_TH" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EmployeeName_EN" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PREFIX_ACADEMIC_TH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PREFIX_ACADEMIC_EN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNApprover" Member="TRNApprovers">
+    <Type Name="TRNApprover">
+      <Column Name="ApproverID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="SubDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubDepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNHistory" Member="TRNHistories">
+    <Type Name="TRNHistory">
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusBefore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ActionName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_TRNDelegateDetail" Member="v_TRNDelegateDetails">
+    <Type Name="v_TRNDelegateDetail">
+      <Column Name="DocType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsByDocType" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DelegateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApproverID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApproverName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubDepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DelegateToID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DelegateToName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DelegateDetailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNPermission" Member="TRNPermissions">
+    <Type Name="TRNPermission">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sequence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="SubDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubDepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SignatureImage" Member="SignatureImages">
+    <Type Name="SignatureImage">
+      <Column Name="ImageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNDelegate" Member="TRNDelegates">
+    <Type Name="TRNDelegate">
+      <Column Name="DelegateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ApproverID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ApproverName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubDepartmentID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PositionID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DelegateToID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DelegateToName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNAttachFileDoc" Member="TRNAttachFileDocs">
+    <Type Name="TRNAttachFileDoc">
+      <Column Name="AttachDocID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActorID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ActorName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AttachDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachFile" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AttachFIlePath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPrimary" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DocSetName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocLibName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNAttachFileDelegate" Member="TRNAttachFileDelegates">
+    <Type Name="TRNAttachFileDelegate">
+      <Column Name="AttachDelegateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DelegateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActorName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AttachDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachFile" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AttachFilePath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DocSetName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocLibName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNDelegateDetail" Member="TRNDelegateDetails">
+    <Type Name="TRNDelegateDetail">
+      <Column Name="DelegateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DelegateDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsByDocType" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Secretary" Member="Secretaries">
+    <Type Name="Secretary">
+      <Column Name="Sequence" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DepID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SecretaryID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Especially" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SubDepID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PosID" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_TRNApproveDetail" Member="v_TRNApproveDetails">
+    <Type Name="v_TRNApproveDetail">
+      <Column Name="DocID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DocTypeCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="OtherDocType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FromDepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ToDepartmentName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Deadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOA" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="PermissionType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActionName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FromDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToDepartmentID" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="StatusBefore" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TotalTime" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRNDocument" Member="TRNDocuments">
+    <Type Name="TRNDocument" Id="ID1">
+      <Column Name="DocID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DocTypeCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="OtherDocType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Attachment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FromDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FromDepartmentName" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ToDepartmentID" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ToDepartmentName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Priority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Deadline" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOA" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="ApprovalMatrix" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AutoStamp" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CostCenter" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="PermissionType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CreatorDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatorSubDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatorPositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestorID" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RequestorDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestorSubDepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestorPositionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaitingFor" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="WaitingForDeptID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CurrentApprovalLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusEmail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SendToID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocumentSource" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DocumentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocumentRecieveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RecieveDocumentNo" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CC" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ApproveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachFilePath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DocSet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocLib" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AttachWordPath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="InternalOnlyStamp" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsOccurBySubDepartment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SubTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_Worklist" Method="SP_Worklist">
+    <Parameter Name="WorklistType" Parameter="worklistType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserLoginID" Parameter="userLoginID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UserLoginDepID" Parameter="userLoginDepID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DocTypeCode" Parameter="docTypeCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateFrom" Parameter="dateFrom" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DateTo" Parameter="dateTo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="txt_Search" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.SP_DocumentLibrary" Method="SP_DocumentLibrary">
+    <Parameter Name="DocTypeCode" Parameter="docTypeCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Category" Parameter="category" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="txtSearch" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="DepartmentID" Parameter="departmentID" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="DateFrom" Parameter="dateFrom" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateTo" Parameter="dateTo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="isAdmin" Type="System.Boolean" DbType="Bit" />
+    <ElementType IdRef="ID1" />
+  </Function>
+</Database>

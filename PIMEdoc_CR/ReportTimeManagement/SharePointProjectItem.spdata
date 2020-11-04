@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="ReportTimeManagementUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="ReportTimeManagement\" Type="ElementManifest" />
+    <ProjectItemFile Source="ReportTimeManagement.webpart" Target="ReportTimeManagement\" Type="ElementFile" />
+    <ProjectItemFile Source="ReportTimeManagementUserControl.ascx" Target="CONTROLTEMPLATES\PIMEdoc_CR\ReportTimeManagement\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="PIMEdoc_CR.ReportTimeManagement" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

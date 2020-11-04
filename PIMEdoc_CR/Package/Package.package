@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f32f8887-d7cd-4816-a75b-2823eed2fd3f" solutionId="f32f8887-d7cd-4816-a75b-2823eed2fd3f" resetWebServer="false" sharePointProductVersion="15.0" name="PIMEdoc_CR" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="itextsharp.dll" deploymentTarget="WebApplication" sourcePath="..\packages\iTextSharp.5.5.10\lib\itextsharp.dll" />
+    <customAssembly location="itextsharp.pdfa.dll" deploymentTarget="WebApplication" sourcePath="..\packages\itextsharp.pdfa.5.5.10\lib\itextsharp.pdfa.dll" />
+    <customAssembly location="itextsharp.xtra.dll" deploymentTarget="WebApplication" sourcePath="..\packages\itextsharp.xtra.5.5.10\lib\itextsharp.xtra.dll" />
+    <customAssembly location="DocumentFormat.OpenXml.dll" deploymentTarget="WebApplication" sourcePath="..\packages\DocumentFormat.OpenXml.2.8.1\lib\net46\DocumentFormat.OpenXml.dll" />
+    <customAssembly location="Newtonsoft.Json.dll" deploymentTarget="WebApplication" sourcePath="..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll" />
+    <customAssembly location="Select.Pdf.dll" deploymentTarget="WebApplication" sourcePath="..\packages\Select.Pdf.17.3.0\lib\net40\Select.Pdf.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="2fbeb8e7-8890-4907-aad6-5af983c23728" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="641efbaf-2ec6-4e70-afb7-b182ca8e67bf" />
+    <projectItemReference itemId="b743413c-314a-4e39-a7ee-3eac390a5445" />
+  </projectItems>
+</package>
